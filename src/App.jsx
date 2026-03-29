@@ -1,0 +1,59 @@
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
+import { CartProvider, setCartToast } from './context/CartContext'
+import { ToastProvider, useToast } from './context/ToastContext'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import Shop from './pages/Shop'
+import Brands from './pages/Brands'
+import Visuals from './pages/Visuals'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Cart from './pages/Cart'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  return null
+}
+
+// Wires toast into cart context
+function ToastBridge() {
+  const { addToast } = useToast()
+  useEffect(() => { setCartToast(addToast) }, [addToast])
+  return null
+}
+
+function Layout() {
+  return (
+    <>
+      <ScrollToTop />
+      <ToastBridge />
+      <Navbar />
+      <Routes>
+        <Route path="/"        element={<Home />} />
+        <Route path="/shop"    element={<Shop />} />
+        <Route path="/brands"  element={<Brands />} />
+        <Route path="/visuals" element={<Visuals />} />
+        <Route path="/about"   element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/cart"    element={<Cart />} />
+        <Route path="*"        element={<Home />} />
+      </Routes>
+      <Footer />
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <ToastProvider>
+        <CartProvider>
+          <Layout />
+        </CartProvider>
+      </ToastProvider>
+    </BrowserRouter>
+  )
+}
