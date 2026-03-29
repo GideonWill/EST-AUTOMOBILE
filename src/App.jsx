@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import { CartProvider, setCartToast } from './context/CartContext'
 import { ToastProvider, useToast } from './context/ToastContext'
+import { AuthProvider } from './context/AuthContext'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -11,6 +12,9 @@ import Visuals from './pages/Visuals'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Cart from './pages/Cart'
+import Checkout from './pages/Checkout'
+import Success from './pages/Success'
+import Profile from './pages/Profile'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -39,6 +43,9 @@ function Layout() {
         <Route path="/about"   element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart"    element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="*"        element={<Home />} />
       </Routes>
       <Footer />
@@ -50,9 +57,11 @@ export default function App() {
   return (
     <BrowserRouter>
       <ToastProvider>
-        <CartProvider>
-          <Layout />
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <Layout />
+          </CartProvider>
+        </AuthProvider>
       </ToastProvider>
     </BrowserRouter>
   )

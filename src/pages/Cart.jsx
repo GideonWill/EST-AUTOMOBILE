@@ -150,13 +150,9 @@ export default function Cart() {
                 </div>
               )}
 
-              <button
-                className="btn-primary cart-checkout-btn"
-                id="checkout-btn"
-                style={{ justifyContent: 'center', marginTop: 20 }}
-              >
-                Proceed to Checkout <ArrowRight size={16} />
-              </button>
+              <Link to="/checkout" className="btn-primary cart-checkout-btn" id="checkout-btn" style={{ justifyContent: 'center', marginTop: 20 }}>
+                Proceed to Checkout <ArrowRight size={18} />
+              </Link>
 
               <div style={{ marginTop: 16, textAlign: 'center', fontSize: 12, color: 'var(--text-muted)' }}>
                 🔒 Secure checkout powered by Stripe
