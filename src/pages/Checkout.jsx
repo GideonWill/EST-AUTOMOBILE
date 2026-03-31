@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import { useAuth } from '../context/AuthContext'
 import { ArrowLeft, ArrowRight, CreditCard, MapPin, CheckCircle, ShieldCheck, Truck } from 'lucide-react'
+import SEO from '../components/SEO'
 
 export default function Checkout() {
   const { items, cartTotal, clearCart } = useCart()
@@ -28,6 +29,7 @@ export default function Checkout() {
   if (items.length === 0 && step < 4) {
     return (
       <div className="container" style={{ paddingTop: 120, textAlign: 'center' }}>
+        <SEO title="Checkout" />
         <h2 style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: 32 }}>Your cart is empty</h2>
         <p style={{ color: 'var(--text-secondary)', marginBottom: 24 }}>Add some premium parts to proceed with checkout.</p>
         <Link to="/shop" className="btn-primary">Go to Shop</Link>
@@ -67,6 +69,7 @@ export default function Checkout() {
 
   return (
     <div className="page-enter" style={{ paddingTop: 100, paddingBottom: 100 }}>
+      <SEO title="Secure Checkout" description="Securely checkout your premium automobile parts." />
       <div className="container">
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           {/* Progress Bar */}

@@ -1,3 +1,4 @@
+import SEO from '../components/SEO'
 import Hero from '../components/Hero'
 import Quality from '../components/Quality'
 import BrandsSection from '../components/BrandsSection'
@@ -10,6 +11,10 @@ import NewsletterCTA from '../components/NewsletterCTA'
 export default function Home() {
   return (
     <main>
+      <SEO 
+        title="Premium Automobile Parts & Accessories"
+        description="Buy, sell, and learn about the best automotive brands. Get race-grade genuine parts with fast shipping."
+      />
       <Hero />
 
       {/* Stats Bar */}

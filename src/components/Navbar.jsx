@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { NavLink, Link, useLocation } from 'react-router-dom'
 import { ShoppingCart, Search, User, Menu, X } from 'lucide-react'
 import { useCart } from '../context/CartContext'
+import { LOGO } from '../data/products'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -32,8 +33,8 @@ export default function Navbar() {
     <>
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
         <Link to="/" className="navbar-logo">
-          <div className="navbar-logo-icon" style={{ fontSize: 24, fontStyle: 'italic', fontWeight: 900 }}>E</div>
-          EST AUTO<span style={{ color: 'var(--accent)' }}>MOTIVE</span>
+          <img src={LOGO} alt="ETS logo" style={{ height: '32px', objectFit: 'contain' }} />
+          <span>ETS AUTO<span style={{ color: 'var(--accent)' }}>MOTIVE</span></span>
         </Link>
 
         <ul className="navbar-links">
@@ -94,7 +95,7 @@ export default function Navbar() {
             background: 'rgba(10,10,10,0.98)',
             backdropFilter: 'blur(20px)',
             borderBottom: '1px solid var(--border)',
-            padding: '24px 40px',
+            padding: '24px 20px',
             zIndex: 998,
             display: 'flex',
             gap: '12px',

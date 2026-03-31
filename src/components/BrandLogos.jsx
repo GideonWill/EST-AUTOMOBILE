@@ -82,4 +82,58 @@ export const AstonMartinLogo = ({ size = 64 }) => (
   </svg>
 )
 
-export const BRAND_LOGOS = { FerrariLogo, LamborghiniLogo, PorscheLogo, BMWLogo, MercedesLogo, AstonMartinLogo }
+/* Audi rings SVG */
+export const AudiLogo = ({ size = 64 }) => (
+  <svg width={size} height={size / 2} viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {[25, 42, 59, 76].map((x, i) => (
+      <circle key={i} cx={x} cy="25" r="10" stroke="#999999" strokeWidth="2.5" />
+    ))}
+  </svg>
+)
+
+/* Tesla T SVG */
+export const TeslaLogo = ({ size = 64 }) => (
+  <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15 20 C35 15 65 15 85 20 L85 25 C65 20 35 20 15 25 Z" fill="#e31937" />
+    <path d="M50 25 L50 90 M30 30 C40 28 60 28 70 30" stroke="#e31937" strokeWidth="8" strokeLinecap="round" />
+  </svg>
+)
+
+/* Toyota oval SVG */
+export const ToyotaLogo = ({ size = 64 }) => (
+  <svg width={size * 1.5} height={size} viewBox="0 0 150 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="75" cy="50" rx="70" ry="45" stroke="#eb0a1e" strokeWidth="4" />
+    <ellipse cx="75" cy="40" rx="35" ry="32" stroke="#eb0a1e" strokeWidth="4" />
+    <path d="M75 10 L75 90" stroke="#eb0a1e" strokeWidth="12" strokeLinecap="round" />
+  </svg>
+)
+
+/* Honda H SVG */
+export const HondaLogo = ({ size = 64 }) => (
+  <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="10" y="10" width="80" height="80" rx="10" stroke="#ff0000" strokeWidth="4" />
+    <path d="M30 25 L30 75 M70 25 L70 75 M30 45 L70 45" stroke="#ff0000" strokeWidth="10" strokeLinecap="round" />
+  </svg>
+)
+
+export const GenericBrandLogo = ({ brand, size = 64 }) => (
+  <div style={{
+    width: size, height: size,
+    background: 'var(--bg-primary)',
+    border: `2px solid ${brand.color || 'var(--accent)'}`,
+    borderRadius: '12px',
+    display: 'flex', alignItems: 'center', justifyContent: 'center',
+    fontFamily: 'Bebas Neue, sans-serif',
+    fontSize: size * 0.4,
+    color: brand.color || 'var(--accent)',
+    textTransform: 'uppercase',
+    letterSpacing: 2
+  }}>
+    {brand.name ? brand.name.substring(0, 1) : '?'}
+  </div>
+)
+
+export const BRAND_LOGOS = {
+  FerrariLogo, LamborghiniLogo, PorscheLogo, BMWLogo, MercedesLogo, AstonMartinLogo,
+  AudiLogo, TeslaLogo, ToyotaLogo, HondaLogo, GenericBrandLogo
+}

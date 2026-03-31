@@ -12,7 +12,31 @@ function ProductCard({ product }) {
   return (
     <div className="part-card" id={`shop-product-${product.id}`}>
       <div className="part-card-img">
-        <div className="part-placeholder">{product.emoji}</div>
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.name}
+            onError={e => {
+              if (product.fallback) {
+                e.target.src = product.fallback
+              } else {
+                e.target.style.display = 'none'
+                const p = e.target.nextSibling
+                if (p) p.style.display = 'flex'
+              }
+            }}
+          />
+        ) : null}
+        <div
+          className="part-placeholder"
+          style={{ display: product.image ? 'none' : 'flex' }}
+        >
+          {product.emoji || '📦'}
+        </div>
+        {/* Hover Overlay */}
+        <div className="part-card-overlay">
+          <p className="part-card-desc">{product.desc || 'Premium automotive part for peak performance.'}</p>
+        </div>
       </div>
       <div className="part-card-info">
         <div style={{ marginBottom: 4 }}>
@@ -44,6 +68,8 @@ function ProductCard({ product }) {
   )
 }
 
+import SEO from '../components/SEO'
+
 export default function Shop() {
   const [searchParams] = useSearchParams()
   const initCat = searchParams.get('cat') || 'all'
@@ -68,6 +94,10 @@ export default function Shop() {
 
   return (
     <div className="shop-page page-enter">
+      <SEO 
+        title="Shop Automobile Parts" 
+        description={`Browse our extensive catalogue of ${ALL_PRODUCTS.length} premium automobile parts across various categories. Find exactly what you need.`} 
+      />
       {/* Page Hero */}
       <div className="page-hero">
         <div className="container">

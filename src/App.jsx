@@ -53,16 +53,20 @@ function Layout() {
   )
 }
 
+import { HelmetProvider } from 'react-helmet-async'
+
 export default function App() {
   return (
-    <BrowserRouter>
-      <ToastProvider>
-        <AuthProvider>
-          <CartProvider>
-            <Layout />
-          </CartProvider>
-        </AuthProvider>
-      </ToastProvider>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ToastProvider>
+          <AuthProvider>
+            <CartProvider>
+              <Layout />
+            </CartProvider>
+          </AuthProvider>
+        </ToastProvider>
+      </BrowserRouter>
+    </HelmetProvider>
   )
 }

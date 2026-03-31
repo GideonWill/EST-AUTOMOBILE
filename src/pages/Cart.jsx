@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Trash2, ShoppingBag, ArrowRight, ArrowLeft, CreditCard, Bitcoin, Banknote, Wallet, Zap } from 'lucide-react'
 import { useCart } from '../context/CartContext'
+import SEO from '../components/SEO'
 
 export default function Cart() {
   const { items, cartTotal, removeFromCart, updateQty, clearCart } = useCart()
@@ -8,6 +9,7 @@ export default function Cart() {
   if (items.length === 0) {
     return (
       <div className="page-enter" style={{ paddingTop: 70 }}>
+        <SEO title="Shopping Cart" description="View items in your cart." />
         <div className="page-hero">
           <div className="container">
             <p className="section-tag">Your Cart</p>
@@ -36,6 +38,7 @@ export default function Cart() {
 
   return (
     <div className="page-enter" style={{ paddingTop: 70 }}>
+      <SEO title="Shopping Cart" description="Review items in your cart and proceed to secure checkout." />
       <div className="page-hero">
         <div className="container">
           <p className="section-tag">Checkout</p>

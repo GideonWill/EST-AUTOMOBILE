@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Handshake, CheckCircle2, Zap } from 'lucide-react'
 import { BRANDS } from '../data/products'
-import { FerrariLogo, LamborghiniLogo, PorscheLogo, BMWLogo, MercedesLogo, AstonMartinLogo } from '../components/BrandLogos'
+import { FerrariLogo, LamborghiniLogo, PorscheLogo, BMWLogo, MercedesLogo, AstonMartinLogo, AudiLogo, TeslaLogo, ToyotaLogo, HondaLogo, GenericBrandLogo } from '../components/BrandLogos'
 
 const LOGO_MAP = {
   1: FerrariLogo,
@@ -10,11 +10,21 @@ const LOGO_MAP = {
   4: BMWLogo,
   5: MercedesLogo,
   6: AstonMartinLogo,
+  7: AudiLogo,
+  8: TeslaLogo,
+  9: ToyotaLogo,
+  10: HondaLogo,
 }
+
+import SEO from '../components/SEO'
 
 export default function Brands() {
   return (
     <div className="page-enter" style={{ paddingTop: 70 }}>
+      <SEO 
+        title="Premium Brands" 
+        description="Handpicked partnerships with the world's most respected automotive manufacturers and high-end parts suppliers."
+      />
       {/* Page Hero */}
       <div className="page-hero">
         <div className="container">
@@ -44,8 +54,8 @@ export default function Brands() {
                 }} />
 
                 {/* Logo */}
-                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 20 }}>
-                  {LogoComp && <LogoComp size={70} />}
+                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 20, minHeight: 70, alignItems: 'center' }}>
+                  {LogoComp ? <LogoComp size={70} /> : <GenericBrandLogo brand={brand} size={70} />}
                 </div>
 
                 <div className="brand-page-logo" style={{ fontSize: 28 }}>{brand.name}</div>

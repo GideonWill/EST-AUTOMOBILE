@@ -5,6 +5,7 @@ const TABS = ['All', 'Exotic Cars', 'Drift', 'Track', 'Street', 'Wheels']
 
 // Alternate tall/short pattern for masonry feel
 const HEIGHTS = [320, 220, 280, 240, 300, 200, 260, 320, 200, 280, 240, 300, 220, 260, 320]
+import SEO from '../components/SEO'
 
 export default function Visuals() {
   const [activeTab, setActiveTab] = useState('All')
@@ -15,6 +16,10 @@ export default function Visuals() {
 
   return (
     <div className="page-enter" style={{ paddingTop: 70 }}>
+      <SEO 
+        title="Automotive Visuals Gallery" 
+        description="A curated collection of automotive beauty. See high-quality photography of track cars, exotic beasts, street tuners, and premium wheels."
+      />
       <style>{`
         .visuals-masonry:hover .masonry-item {
           filter: blur(5px) grayscale(0.5);

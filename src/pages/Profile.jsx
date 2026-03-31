@@ -1,6 +1,7 @@
 import { useAuth } from '../context/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
 import { User, Mail, MapPin, Package, Phone, Settings, LogOut, ChevronRight, ShoppingBag, Truck } from 'lucide-react'
+import SEO from '../components/SEO'
 
 export default function Profile() {
   const { user, orders, logout } = useAuth()
@@ -9,6 +10,7 @@ export default function Profile() {
   if (!user) {
     return (
       <div className="container" style={{ paddingTop: 120, textAlign: 'center' }}>
+        <SEO title="User Profile" />
         <h2 style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: 32 }}>Not Logged In</h2>
         <p style={{ color: 'var(--text-secondary)', marginBottom: 24 }}>Log in to view your profile and orders.</p>
         <Link to="/" className="btn-primary">Go Home</Link>
@@ -23,6 +25,7 @@ export default function Profile() {
 
   return (
     <div className="page-enter" style={{ paddingTop: 100, paddingBottom: 100 }}>
+      <SEO title={`${user.name} | Profile & Orders`} description="Manage your customer profile and view your order history." />
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 40, alignItems: 'start' }}>
           

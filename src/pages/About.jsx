@@ -9,9 +9,15 @@ const ICON_MAP = {
   zap: Zap,
 }
 
+import SEO from '../components/SEO'
+
 export default function About() {
   return (
     <div className="page-enter" style={{ paddingTop: 70 }}>
+      <SEO 
+        title="About AutoMotive" 
+        description="Learn more about EST AUTOMOTIVE's mission, our premium automotive engineering background, and our commitment to racing-grade parts."
+      />
       {/* Page Hero */}
       <div className="page-hero">
         <div className="container">

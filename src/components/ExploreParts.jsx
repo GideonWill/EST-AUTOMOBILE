@@ -23,6 +23,10 @@ function PartCard({ product }) {
         >
           <Settings size={48} />
         </div>
+        {/* Hover Overlay */}
+        <div className="part-card-overlay">
+          <p className="part-card-desc">{product.desc || 'Premium automotive part for peak performance.'}</p>
+        </div>
       </div>
 
       <div className="part-card-info">
@@ -76,7 +80,7 @@ export default function ExploreParts() {
           </Link>
         </div>
         <div className="parts-grid">
-          {WHEELS.map(p => <PartCard key={p.id} product={p} />)}
+          {WHEELS.slice(0, 4).map(p => <PartCard key={p.id} product={p} />)}
         </div>
 
         {/* Trending Spares */}
@@ -87,7 +91,7 @@ export default function ExploreParts() {
           </Link>
         </div>
         <div className="parts-grid">
-          {SPARES.map(p => <PartCard key={p.id} product={p} />)}
+          {SPARES.slice(0, 4).map(p => <PartCard key={p.id} product={p} />)}
         </div>
       </div>
     </section>

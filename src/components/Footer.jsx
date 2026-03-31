@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Globe, Play, Share2, Mail } from 'lucide-react'
+import { LOGO } from '../data/products'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -11,8 +12,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="footer-brand">
             <Link to="/" className="navbar-logo" style={{ display: 'inline-flex' }}>
-              <div className="navbar-logo-icon" style={{ fontSize: 24, fontStyle: 'italic', fontWeight: 900 }}>E</div>
-              EST AUTO<span style={{ color: 'var(--accent)' }}>MOTIVE</span>
+              <img src={LOGO} alt="ETS logo" style={{ height: '32px', objectFit: 'contain' }} />
+              <span>ETS AUTO<span style={{ color: 'var(--accent)' }}>MOTIVE</span></span>
             </Link>
             <p>
               Your premier destination for premium automobile parts, wheels, tyres
@@ -55,11 +56,11 @@ export default function Footer() {
             <h4>Contact</h4>
             <ul className="footer-links">
               <li>
-                <a href="tel:0509294314" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s' }}
+                <a href="https://wa.me/0509294314" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s' }}
                   onMouseEnter={e => e.target.style.color = 'var(--accent)'}
                   onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}
                 >
-                  📞 0509294314
+                  💬 WhatsApp: 0509294314
                 </a>
               </li>
               <li>
@@ -67,7 +68,7 @@ export default function Footer() {
                   onMouseEnter={e => e.target.style.color = 'var(--accent)'}
                   onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}
                 >
-                  📞 0245753268
+                  📞 Call Line: 0245753268
                 </a>
               </li>
               <li><Link to="/contact">Book a Service</Link></li>
@@ -79,7 +80,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p className="footer-bottom-text">
-            © {year} EST AutoMotive. All rights reserved.
+            © {year} ETS AutoMotive. All rights reserved.
           </p>
           <div className="footer-bottom-links">
             <Link to="/contact">Privacy Policy</Link>

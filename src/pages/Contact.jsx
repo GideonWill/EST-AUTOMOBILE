@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { MapPin, Clock, Phone, Mail, Send, CheckCircle, Settings, Snowflake, Wrench, Zap } from 'lucide-react'
+import SEO from '../components/SEO'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
@@ -17,6 +18,10 @@ export default function Contact() {
 
   return (
     <div className="page-enter" style={{ paddingTop: 70 }}>
+      <SEO 
+        title="Contact Us" 
+        description="Get in touch with EST AUTOMOTIVE. Book a consultation for premium car service, parts, sales, and leasing directly on our site."
+      />
       {/* Page Hero */}
       <div className="page-hero">
         <div className="container">

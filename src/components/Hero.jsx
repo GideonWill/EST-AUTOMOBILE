@@ -1,90 +1,41 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, ChevronDown } from 'lucide-react'
-import { PHOTOS } from '../data/photos'
-import porscheImg from '../assets/exotic cars/WhatsApp Image 2026-03-28 at 19.51.36.jpeg'
+
+// Selected a high-quality Unsplash image similar to the BMW reference
+const BMW_BG = 'https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&w=1920&q=80'
 
 export default function Hero() {
   return (
     <section className="hero" id="hero">
-      <div className="hero-bg-gradient" />
-      <div className="hero-grid-overlay" />
-
-      <div className="hero-inner">
-        <style>{`
-          @keyframes bounceCar {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-30px); }
-            60% { transform: translateY(-15px); }
-          }
-        `}</style>
-        {/* Left: Content */}
-        <div className="hero-content page-enter">
-          <div className="hero-tag">
-            <span className="hero-tag-dot" />
-            Premium Automobile Institution
-          </div>
-
-          <h1 className="hero-headline">
-            MAKE<br />
-            <span className="accent">SELL</span><br />
-            EARN
+      {/* Immersive background image */}
+      <div 
+        className="hero-bg" 
+        style={{ backgroundImage: `url('${BMW_BG}')` }} 
+      />
+      
+      {/* Dark slanted overlay */}
+      <div className="hero-slant-overlay">
+        <div className="hero-slant-content page-enter">
+          <h1 className="hero-main-title">
+             SETTING OFF<br />
+             IN A TOP FORM
           </h1>
-
-          <p className="hero-headline-sub">Air-Con · Vulcanizing · Auto Electrical</p>
-
-          <p className="hero-desc">
-            Ghana's premier automobile-oriented institution. Expert air-conditioning services,
-            professional vulcanizing and complete auto electrical solutions — all under one roof.
-          </p>
-
-          <div className="hero-actions">
+          <p className="hero-sub-title">EXPLORE ALL YOUR SPARE PARTS</p>
+          
+          <div className="hero-actions" style={{ marginTop: '20px' }}>
             <Link to="/contact" className="btn-primary" id="hero-book-btn">
               Book a Service <ArrowRight size={16} />
             </Link>
-            <Link to="/shop" className="btn-outline" id="hero-shop-btn">
+            <Link to="/shop" className="btn-outline" id="hero-shop-btn" style={{ borderColor: 'rgba(255,255,255,0.2)', color: '#fff', background: 'rgba(255,255,255,0.05)' }}>
               Shop Parts
             </Link>
           </div>
-
-          <div className="hero-stats">
-            {[
-              { value: '50K+', label: 'Customers' },
-              { value: '12K+', label: 'Products' },
-              { value: '200+', label: 'Brands' },
-              { value: '8 Yrs', label: 'Experience' },
-            ].map((s, i) => (
-              <div key={i}>
-                <div className="hero-stat-value">{s.value}</div>
-                <div className="hero-stat-label">{s.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
-
-        {/* Right: Real Car Image */}
-        <div className="hero-image-wrap">
-          <div className="hero-image-glow" />
-          {/* Try local first, fall back to Unsplash */}
-          <img
-            src={porscheImg}
-            alt="Premium Sports Car"
-            style={{
-              position: 'relative', zIndex: 2,
-              width: '100%', maxWidth: 680,
-              height: 460,
-              objectFit: 'cover',
-              animation: 'bounceCar 3s infinite',
-              filter: 'drop-shadow(0 20px 60px rgba(0,0,0,0.8))',
-              borderRadius: 16,
-            }}
-            onError={e => {
-              // Fallback to Unsplash sports car
-              e.target.src = PHOTOS.heroCar
-              e.target.style.borderRadius = '16px'
-              e.target.style.objectFit = 'cover'
-              e.target.style.height = '460px'
-            }}
-          />
+        
+        {/* Decorative chevons on the slant edge */}
+        <div className="slant-decoration">
+          <div className="slant-chevron"></div>
+          <div className="slant-chevron"></div>
         </div>
       </div>
 
@@ -93,7 +44,7 @@ export default function Hero() {
         style={{
           position: 'absolute', bottom: 32, left: '50%', transform: 'translateX(-50%)',
           display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6,
-          color: 'var(--text-muted)', animation: 'float 2s ease-in-out infinite',
+          color: 'rgba(255,255,255,0.6)', animation: 'float 2s ease-in-out infinite',
           cursor: 'pointer', zIndex: 3,
         }}
         onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
