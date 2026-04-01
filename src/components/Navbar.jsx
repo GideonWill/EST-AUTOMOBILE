@@ -64,9 +64,6 @@ export default function Navbar() {
             <ShoppingCart size={18} />
             {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
           </Link>
-          <Link to="/profile" className="navbar-icon-btn" id="user-btn" aria-label="Account">
-            <User size={18} />
-          </Link>
           <button
             className="hamburger"
             id="hamburger-btn"
