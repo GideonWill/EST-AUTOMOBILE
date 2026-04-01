@@ -12,6 +12,14 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault()
+    
+    // Format message
+    const waNumber = '233509294314'; // Ghana format for 0509294314
+    const text = `*New Contact Request*\n\n*Name:* ${form.name}\n*Email:* ${form.email}\n*Service:* ${form.subject}\n*Message:* ${form.message}`;
+    const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
+    
+    window.open(url, '_blank');
+
     setSent(true)
     setForm({ name: '', email: '', subject: '', message: '' })
   }

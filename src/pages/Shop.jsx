@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { ShoppingCart, Star, SlidersHorizontal, Search } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 import { ALL_PRODUCTS } from '../data/products'
@@ -73,8 +73,15 @@ export default function Shop() {
   )
   const [activeBrand, setActiveBrand] = useState('All')
   const [sort, setSort] = useState('featured')
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState(searchParams.get('q') || '')
   const [showFilters, setShowFilters] = useState(true)
+
+  useEffect(() => {
+    const q = searchParams.get('q')
+    if (q !== null) {
+      setSearch(q)
+    }
+  }, [searchParams])
 
   const filtered = useMemo(() => {
     let list = [...ALL_PRODUCTS]

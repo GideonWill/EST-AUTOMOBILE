@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { NavLink, Link, useLocation } from 'react-router-dom'
+import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom'
 import { ShoppingCart, Search, User, Menu, X } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 import { LOGO } from '../data/products'
@@ -8,8 +8,10 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
   const { cartCount } = useCart()
   const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -102,6 +104,19 @@ export default function Navbar() {
           <Search size={18} color="var(--text-muted)" />
           <input
             autoFocus
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                if (searchQuery.trim()) {
+                  navigate(`/shop?q=${encodeURIComponent(searchQuery.trim())}`)
+                } else {
+                  navigate('/shop')
+                }
+                setSearchOpen(false)
+                setSearchQuery('')
+              }
+            }}
             placeholder="Search parts, brands, wheels..."
             style={{
               flex: 1,
