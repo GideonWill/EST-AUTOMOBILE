@@ -22,10 +22,10 @@ export default function Home() {
         <div className="container">
           <div className="stats-bar-inner">
             {[
-              { num: '50', suffix: 'K+', label: 'Happy Customers' },
-              { num: '12', suffix: 'K+', label: 'Products Listed' },
-              { num: '200', suffix: '+',  label: 'Premium Brands' },
-              { num: '8',   suffix: ' Yrs', label: 'In Business' },
+              { num: '100', suffix: '', label: 'Happy Customers' },
+              { num: '26', suffix: '', label: 'Products Listed' },
+              { num: '50', suffix: '+',  label: 'Premium Brands' },
+              { num: '4',   suffix: ' Yrs', label: 'In Business' },
             ].map((s, i) => (
               <div className="stat-item" key={i}>
                 <div className="stat-number">

@@ -65,13 +65,13 @@ const _SPARES = [
   { id: 202, name: 'Akrapovič Exhaust Ti', price: 1240.00, oldPrice: 1499.00, brand: 'Akrapovič', rating: 5.0, reviews: 42, image: '/exhaust_product.png', fallback: PHOTOS.exhaustSmoke, category: 'exhaust', desc: 'Titanium exhaust system designed for enhanced torque and the signature deep sound.' },
   { id: 203, name: 'KW Variant 3 Coilover', price: 1890.00, oldPrice: 2200.00, brand: 'KW', rating: 4.8, reviews: 38, image: '/wheel_product.png', fallback: PHOTOS.wheelClose, category: 'suspension', desc: 'Advanced coilover suspension for individual height and damping adjustment.' },
   { id: 204, name: 'AC Service & Regas Kit', price: 645.00, oldPrice: 780.00, brand: 'AutoMotive', rating: 4.7, reviews: 61, image: '/car_aircon.png', fallback: PHOTOS.workshop, category: 'aircon', desc: 'Complete regas and maintenance kit to restore cabin cooling efficiency.' },
-  { id: 210, name: 'Air Conditioning Filter', price: 35.00, oldPrice: 45.00, brand: 'AutoMotive', rating: 4.8, reviews: 45, image: ac_filter, fallback: PHOTOS.aircon, category: 'engine', desc: 'High-efficiency cabin filter that removes dust and allergens for fresh interior air.' },
-  { id: 211, name: 'Heavy Duty Car Jack', price: 85.00, oldPrice: 110.00, brand: 'AutoMotive', rating: 4.9, reviews: 32, image: car_jack, fallback: PHOTOS.workshop, category: 'suspension', desc: 'Rugged hydraulic lifting tool with safety locks for secure vehicle maintenance.' },
-  { id: 212, name: 'Engine Air Filter High-Flow', price: 42.00, oldPrice: 55.00, brand: 'AutoMotive', rating: 4.7, reviews: 88, image: engine_filter, fallback: PHOTOS.engineBay, category: 'engine', desc: 'High-flow air filter that optimizes engine intake and improves fuel efficiency.' },
-  { id: 213, name: 'Premium Oil Filter (Compact)', price: 22.00, oldPrice: 28.00, brand: 'AutoMotive', rating: 4.8, reviews: 102, image: oil_filter_1, fallback: PHOTOS.engineBay, category: 'engine', desc: 'Advanced multi-layer filtration to keep your engine oil clean and extend engine life.' },
-  { id: 214, name: 'Premium Oil Filter (HD)', price: 25.00, oldPrice: 32.00, brand: 'AutoMotive', rating: 4.9, reviews: 76, image: oil_filter_2, fallback: PHOTOS.engineBay, category: 'engine', desc: 'Industrial-strength filtration designed for high-performance and heavy-duty engines.' },
-  { id: 215, name: 'High-Performance Belt', price: 48.00, oldPrice: 60.00, brand: 'AutoMotive', rating: 4.7, reviews: 41, image: serpentine_belt, fallback: PHOTOS.engineBay, category: 'engine', desc: 'Durable, heat-resistant drive belt ensuring smooth operation of vital engine components.' },
-  { id: 216, name: 'Iridium Spark Plugs Set', price: 58.00, oldPrice: 75.00, brand: 'AutoMotive', rating: 5.0, reviews: 156, image: spark_plugs, fallback: PHOTOS.engineBay, category: 'engine', desc: 'High-grade iridium spark plugs for reliable ignition and optimal fuel combustion.' },
+  { id: 210, name: 'Air Conditioning Filter', price: 35.00, oldPrice: 45.00, brand: 'Toyota', rating: 4.8, reviews: 45, image: ac_filter, fallback: PHOTOS.aircon, category: 'engine', desc: 'High-efficiency cabin filter that removes dust and allergens for fresh interior air.' },
+  { id: 211, name: 'Heavy Duty Car Jack', price: 85.00, oldPrice: 110.00, brand: 'Ford', rating: 4.9, reviews: 32, image: car_jack, fallback: PHOTOS.workshop, category: 'suspension', desc: 'Rugged hydraulic lifting tool with safety locks for secure vehicle maintenance.' },
+  { id: 212, name: 'Engine Air Filter High-Flow', price: 42.00, oldPrice: 55.00, brand: 'Honda', rating: 4.7, reviews: 88, image: engine_filter, fallback: PHOTOS.engineBay, category: 'engine', desc: 'High-flow air filter that optimizes engine intake and improves fuel efficiency.' },
+  { id: 213, name: 'Premium Oil Filter (Compact)', price: 22.00, oldPrice: 28.00, brand: 'Nissan', rating: 4.8, reviews: 102, image: oil_filter_1, fallback: PHOTOS.engineBay, category: 'engine', desc: 'Advanced multi-layer filtration to keep your engine oil clean and extend engine life.' },
+  { id: 214, name: 'Premium Oil Filter (HD)', price: 25.00, oldPrice: 32.00, brand: 'BMW', rating: 4.9, reviews: 76, image: oil_filter_2, fallback: PHOTOS.engineBay, category: 'engine', desc: 'Industrial-strength filtration designed for high-performance and heavy-duty engines.' },
+  { id: 215, name: 'High-Performance Belt', price: 48.00, oldPrice: 60.00, brand: 'Mercedes', rating: 4.7, reviews: 41, image: serpentine_belt, fallback: PHOTOS.engineBay, category: 'engine', desc: 'Durable, heat-resistant drive belt ensuring smooth operation of vital engine components.' },
+  { id: 216, name: 'Iridium Spark Plugs Set', price: 58.00, oldPrice: 75.00, brand: 'Audi', rating: 5.0, reviews: 156, image: spark_plugs, fallback: PHOTOS.engineBay, category: 'engine', desc: 'High-grade iridium spark plugs for reliable ignition and optimal fuel combustion.' },
 ]
 export const SPARES = _SPARES.map(p => ({ ...p, price: p.price * 14.5, oldPrice: p.oldPrice * 14.5 }))
 
@@ -84,6 +84,9 @@ const _EXTRA_PRODUCTS = [
   { id: 302, name: 'Pirelli P Zero 245/35 R19', price: 189.00, oldPrice: 225.00, brand: 'Pirelli', rating: 4.9, reviews: 201, image: '/tyre_product.png', fallback: PHOTOS.tyreDetail, category: 'tyres' },
   { id: 303, name: 'Michelin Pilot Sport 4', price: 165.00, oldPrice: 198.00, brand: 'Michelin', rating: 4.8, reviews: 388, image: '/tyre_product.png', fallback: PHOTOS.tyreDetail, category: 'tyres' },
   { id: 401, name: 'AC Vulcanizing Service', price: 45.00, oldPrice: 65.00, brand: 'AutoMotive', rating: 4.9, reviews: 203, image: '/tyre_product.png', fallback: PHOTOS.tyreDetail, category: 'tyres' },
+  { id: 402, name: 'Brembo Ceramic Pads', price: 125.00, oldPrice: 150.00, brand: 'Brembo', rating: 4.8, reviews: 140, image: '/brake_product.png', fallback: PHOTOS.brakesRed, category: 'brakes' },
+  { id: 403, name: 'HRE Wheels Cleaning Kit', price: 25.00, oldPrice: 30.00, brand: 'HRE', rating: 4.5, reviews: 299, image: '/wheel_product.png', fallback: PHOTOS.wheelClose, category: 'wheels' },
+  { id: 404, name: 'Akrapovič Carbon Tip', price: 150.00, oldPrice: 180.00, brand: 'Akrapovič', rating: 5.0, reviews: 85, image: '/exhaust_product.png', fallback: PHOTOS.exhaustSmoke, category: 'exhaust' },
 ]
 
 export const ALL_PRODUCTS = [
@@ -117,9 +120,9 @@ export const VISUALS_GALLERY = [
 ]
 
 export const SERVICES = [
-  { id: 1, title: 'Air-Conditioning Service', desc: 'Full automobile AC diagnostics, servicing, regas and repair. Keeping your cabin cool and comfortable all year round.', icon: 'snowflake', image: PHOTOS.aircon },
+  { id: 1, title: 'Air-Conditioning Service', desc: 'Full automobile AC diagnostics, servicing, regas and repair. Keeping your cabin cool and comfortable all year round.', icon: 'snowflake', image: ac_filter },
   { id: 2, title: 'Vulcanizing Service', desc: 'Professional tyre vulcanizing, puncture repair, wheel balancing and replacement. Back on the road in no time.', icon: 'wrench', image: PHOTOS.tyreDetail },
-  { id: 3, title: 'Auto Electrical Service', desc: 'Complete auto electrical diagnostics, fault finding, wiring repairs, battery service and ECU programming for all vehicle makes.', icon: 'zap', image: PHOTOS.workshop },
+  { id: 3, title: 'Auto Electrical Service', desc: 'Complete auto electrical diagnostics, fault finding, wiring repairs, battery service and ECU programming for all vehicle makes.', icon: 'zap', image: s2 },
 ]
 
 export const FEATURED_PRODUCT = ALL_PRODUCTS.find(p => p.featured)

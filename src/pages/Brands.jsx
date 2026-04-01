@@ -92,7 +92,7 @@ export default function Brands() {
           display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 40, textAlign: 'center',
         }}>
           {[
-            { val: '200+', label: 'Brand Partners',     icon: <Handshake size={32} color="var(--text-secondary)" /> },
+            { val: '50+', label: 'Brand Partners',     icon: <Handshake size={32} color="var(--text-secondary)" /> },
             { val: '99%',  label: 'Authenticity Rate',  icon: <CheckCircle2 size={32} color="var(--text-secondary)" /> },
             { val: '48hr', label: 'Brand Verification', icon: <Zap size={32} color="var(--text-secondary)" /> },
           ].map((s, i) => (

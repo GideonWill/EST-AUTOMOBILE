@@ -3,9 +3,10 @@ import { ShoppingCart, Star, SlidersHorizontal, Search } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 import { ALL_PRODUCTS } from '../data/products'
 import { useSearchParams } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const CATEGORIES = ['All', 'Wheels', 'Tyres', 'Brakes', 'Exhaust', 'Engine', 'Suspension']
-const BRANDS_FILTER = ['All', 'Vossen', 'BBS', 'HRE', 'Brembo', 'Akrapovič', 'Pirelli', 'Michelin']
+const BRANDS_FILTER = ['All', ...new Set(ALL_PRODUCTS.map(p => p.brand))].sort((a, b) => a === 'All' ? -1 : b === 'All' ? 1 : a.localeCompare(b))
 
 function ProductCard({ product }) {
   const { addToCart } = useCart()
@@ -44,10 +45,6 @@ function ProductCard({ product }) {
         </div>
         <div className="part-card-name">{product.name}</div>
         <div style={{ fontSize: 12, color: 'var(--text-muted)', marginBottom: 6 }}>{product.brand}</div>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
-          <span className="part-card-price">GH₵{product.price.toFixed(2)}</span>
-          <span className="part-card-price-old">GH₵{product.oldPrice.toFixed(2)}</span>
-        </div>
         <div className="part-card-footer">
           <div className="part-rating">
             <Star size={12} fill="var(--accent)" color="var(--accent)" />
@@ -67,8 +64,6 @@ function ProductCard({ product }) {
     </div>
   )
 }
-
-import SEO from '../components/SEO'
 
 export default function Shop() {
   const [searchParams] = useSearchParams()

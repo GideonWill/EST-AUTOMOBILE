@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ShoppingCart, Star, ArrowRight, Settings } from 'lucide-react'
 import { useCart } from '../context/CartContext'
-import { WHEELS, SPARES } from '../data/products'
+import { ALL_PRODUCTS } from '../data/products'
 
 function PartCard({ product }) {
   const { addToCart } = useCart()
@@ -32,10 +32,6 @@ function PartCard({ product }) {
       <div className="part-card-info">
         <div className="part-card-name">{product.name}</div>
         <div style={{ fontSize: 12, color: 'var(--text-muted)', marginBottom: 6 }}>{product.brand}</div>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
-          <span className="part-card-price">GH₵{product.price.toFixed(2)}</span>
-          <span className="part-card-price-old">GH₵{product.oldPrice.toFixed(2)}</span>
-        </div>
         <div className="part-card-footer">
           <div className="part-rating">
             <Star size={12} fill="var(--accent)" color="var(--accent)" />
@@ -57,6 +53,9 @@ function PartCard({ product }) {
 }
 
 export default function ExploreParts() {
+  const featuredIds = [210, 211, 212, 214, 213, 215, 216]
+  const exploreParts = ALL_PRODUCTS.filter(p => featuredIds.includes(p.id)).sort((a,b) => featuredIds.indexOf(a.id) - featuredIds.indexOf(b.id))
+
   return (
     <section className="explore-section" id="explore">
       <div className="container">
@@ -68,30 +67,12 @@ export default function ExploreParts() {
             </h2>
           </div>
           <Link to="/shop" className="btn-outline" id="explore-shop-btn">
-            View All <ArrowRight size={16} />
+            View More <ArrowRight size={16} />
           </Link>
         </div>
 
-        {/* Trending Wheels */}
-        <div className="parts-sub-header" style={{ marginTop: 0 }}>
-          <span className="parts-sub-title">Trending Wheels</span>
-          <Link to="/shop?cat=wheels" style={{ fontSize: 13, color: 'var(--accent)', fontFamily: 'Rajdhani, sans-serif', fontWeight: 600, letterSpacing: 1 }}>
-            See All →
-          </Link>
-        </div>
-        <div className="parts-grid">
-          {WHEELS.slice(0, 4).map(p => <PartCard key={p.id} product={p} />)}
-        </div>
-
-        {/* Trending Spares */}
-        <div className="parts-sub-header">
-          <span className="parts-sub-title">Trending Spares</span>
-          <Link to="/shop?cat=brakes" style={{ fontSize: 13, color: 'var(--accent)', fontFamily: 'Rajdhani, sans-serif', fontWeight: 600, letterSpacing: 1 }}>
-            See All →
-          </Link>
-        </div>
-        <div className="parts-grid">
-          {SPARES.slice(0, 4).map(p => <PartCard key={p.id} product={p} />)}
+        <div className="parts-grid" style={{ marginTop: 32 }}>
+          {exploreParts.map(p => <PartCard key={p.id} product={p} />)}
         </div>
       </div>
     </section>

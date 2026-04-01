@@ -51,8 +51,6 @@ export default function FeaturedProduct() {
             </div>
 
             <div className="featured-price-wrap">
-              <span className="featured-price">GH₵{product.price.toFixed(2)}</span>
-              <span className="featured-price-old">GH₵{product.oldPrice.toFixed(2)}</span>
               <span className="badge">SAVE 30%</span>
             </div>
 
@@ -86,17 +84,7 @@ export default function FeaturedProduct() {
               />
             </div>
 
-            {/* Floating price badge */}
-            <div style={{
-              position: 'absolute', top: 20, right: 0,
-              background: 'var(--accent)', color: '#000',
-              borderRadius: 'var(--radius-md)', padding: '14px 18px',
-              fontFamily: 'Bebas Neue, sans-serif', fontSize: 28, letterSpacing: 2,
-              boxShadow: '0 8px 32px rgba(245,197,24,0.3)',
-              animation: 'float 3s ease-in-out infinite', animationDelay: '1s',
-            }}>
-              GH₵{product.price.toFixed(2)}
-            </div>
+            {/* Floating price badge removed */}
           </div>
         </div>
       </div>

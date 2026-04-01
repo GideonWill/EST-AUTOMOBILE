@@ -80,9 +80,9 @@ export default function About() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginTop: 40 }}>
               {[
-                { val: '50K+',  label: 'Customers Served' },
-                { val: '200+',  label: 'Brand Partners' },
-                { val: '12K+',  label: 'Products Listed' },
+                { val: '100',  label: 'Customers Served' },
+                { val: '50+',  label: 'Brand Partners' },
+                { val: '26',  label: 'Products Listed' },
                 { val: '99.4%', label: 'Satisfaction Rate' },
               ].map((s, i) => (
                 <div key={i} style={{

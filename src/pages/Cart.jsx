@@ -96,8 +96,7 @@ export default function Cart() {
                     </div>
                   </div>
                   <div style={{ textAlign: 'right' }}>
-                    <div className="cart-item-price">GH₵{(item.price * item.qty).toFixed(2)}</div>
-                    <div style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 4 }}>GH₵{item.price.toFixed(2)} ea.</div>
+                    {/* Price hidden per catalog mode */}
                     <button
                       className="cart-remove"
                       id={`remove-${item.id}`}
