@@ -55,11 +55,8 @@ export default function FeaturedProduct() {
             </div>
 
             <div className="featured-actions">
-              <button className="btn-primary" id="featured-add-cart-btn" onClick={() => addToCart(product)}>
-                <ShoppingCart size={16} /> Add to Cart
-              </button>
-              <Link to="/shop" className="btn-outline" id="featured-view-btn">
-                View All Tyres <ArrowRight size={16} />
+              <Link to="/contact" className="btn-primary" id="featured-view-btn">
+                BOOK NOW <ArrowRight size={16} />
               </Link>
             </div>
           </div>

@@ -17,11 +17,6 @@ const FEATURES = [
     title: 'Auto Electrical Service',
     desc: 'Complete auto electrical diagnostics, fault finding, wiring repairs, battery service and ECU programming.',
   },
-  {
-    icon: Award,
-    title: 'Certified & Quality Assured',
-    desc: 'Every service is carried out by certified technicians to manufacturer specifications, guaranteed to last.',
-  },
 ]
 
 export default function Quality() {

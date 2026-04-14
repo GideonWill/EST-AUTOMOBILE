@@ -21,6 +21,11 @@ import oil_filter_2 from '../assets/exotic cars/oil filter.jpeg'
 import serpentine_belt from '../assets/exotic cars/Serpentine Belt.jpeg'
 import spark_plugs from '../assets/exotic cars/spark plugs.jpeg'
 
+// Service images
+import vulcanizing_img from '../assets/exotic cars/vulcanizing.png'
+import electrical_img from '../assets/exotic cars/electrical.png'
+import aircon_img from '../assets/exotic cars/aircon.png'
+
 export const LOGO = new URL('../assets/exotic cars/ETS LOGO.png', import.meta.url).href
 
 export const BRANDS = [
@@ -53,40 +58,26 @@ export const BRANDS = [
 ]
 
 const _WHEELS = [
-  { id: 101, name: 'Vossen CV3-R 20"', price: 389.99, oldPrice: 459.99, brand: 'Vossen', rating: 4.8, reviews: 124, image: '/wheel_product.png', fallback: PHOTOS.wheelClose, category: 'wheels', desc: 'High-performance alloy wheels with a sleek monoblock design for superior handling.' },
-  { id: 102, name: 'BBS RS-GT 19"', price: 312.50, oldPrice: 380.00, brand: 'BBS', rating: 4.9, reviews: 89, image: '/wheel_product.png', fallback: PHOTOS.wheelClose, category: 'wheels', desc: 'Multi-piece forged wheels offering classic styling and ultra-lightweight performance.' },
-  { id: 103, name: 'HRE P101 21"', price: 544.00, oldPrice: 620.00, brand: 'HRE', rating: 4.7, reviews: 56, image: '/wheel_product.png', fallback: PHOTOS.wheelClose, category: 'wheels', desc: 'Masterpiece of engineering, providing the ultimate balance of strength and weight reduction.' },
-  { id: 104, name: 'Rotiform LAS-R 18"', price: 228.00, oldPrice: 275.00, brand: 'Rotiform', rating: 4.6, reviews: 211, image: '/wheel_product.png', fallback: PHOTOS.wheelClose, category: 'wheels', desc: 'Iconic multi-spoke design perfect for street and track aesthetics.' },
+  { id: 101, name: 'Vossen CV3-R 20"', price: 389.99, oldPrice: 459.99, brand: 'Vossen', rating: 4.8, reviews: 124, image: '/wheel_product.png', fallback: PHOTOS.wheelClose, category: 'wheels', desc: 'High-performance alloy wheels with a sleek monoblock design for superior handling.', use: 'These wheels are mounted on the vehicle axles and serve as the structural support for tyres, significantly impacting cornering stability and aesthetic appeal.' },
+  { id: 102, name: 'BBS RS-GT 19"', price: 312.50, oldPrice: 380.00, brand: 'BBS', rating: 4.9, reviews: 89, image: '/wheel_product.png', fallback: PHOTOS.wheelClose, category: 'wheels', desc: 'Multi-piece forged wheels offering classic styling and ultra-lightweight performance.', use: 'Primarily used in sports and luxury vehicles to reduce unsprung weight, thereby improving suspension response and acceleration.' },
 ]
 export const WHEELS = _WHEELS.map(p => ({ ...p, price: p.price * 14.5, oldPrice: p.oldPrice * 14.5 }))
 
 const _SPARES = [
-  { id: 201, name: 'Brembo GT Brake Kit', price: 879.00, oldPrice: 1050.00, brand: 'Brembo', rating: 4.9, reviews: 73, image: '/brake_product.png', fallback: PHOTOS.brakesRed, category: 'brakes', desc: 'Professional-grade braking system with vented discs for maximum stopping power.' },
-  { id: 202, name: 'Akrapovič Exhaust Ti', price: 1240.00, oldPrice: 1499.00, brand: 'Akrapovič', rating: 5.0, reviews: 42, image: '/exhaust_product.png', fallback: PHOTOS.exhaustSmoke, category: 'exhaust', desc: 'Titanium exhaust system designed for enhanced torque and the signature deep sound.' },
-  { id: 203, name: 'KW Variant 3 Coilover', price: 1890.00, oldPrice: 2200.00, brand: 'KW', rating: 4.8, reviews: 38, image: '/wheel_product.png', fallback: PHOTOS.wheelClose, category: 'suspension', desc: 'Advanced coilover suspension for individual height and damping adjustment.' },
-  { id: 204, name: 'AC Service & Regas Kit', price: 645.00, oldPrice: 780.00, brand: 'AutoMotive', rating: 4.7, reviews: 61, image: '/car_aircon.png', fallback: PHOTOS.workshop, category: 'aircon', desc: 'Complete regas and maintenance kit to restore cabin cooling efficiency.' },
-  { id: 210, name: 'Air Conditioning Filter', price: 35.00, oldPrice: 45.00, brand: 'Toyota', rating: 4.8, reviews: 45, image: ac_filter, fallback: PHOTOS.aircon, category: 'engine', desc: 'High-efficiency cabin filter that removes dust and allergens for fresh interior air.' },
-  { id: 211, name: 'Heavy Duty Car Jack', price: 85.00, oldPrice: 110.00, brand: 'Ford', rating: 4.9, reviews: 32, image: car_jack, fallback: PHOTOS.workshop, category: 'suspension', desc: 'Rugged hydraulic lifting tool with safety locks for secure vehicle maintenance.' },
-  { id: 212, name: 'Engine Air Filter High-Flow', price: 42.00, oldPrice: 55.00, brand: 'Honda', rating: 4.7, reviews: 88, image: engine_filter, fallback: PHOTOS.engineBay, category: 'engine', desc: 'High-flow air filter that optimizes engine intake and improves fuel efficiency.' },
-  { id: 213, name: 'Premium Oil Filter (Compact)', price: 22.00, oldPrice: 28.00, brand: 'Nissan', rating: 4.8, reviews: 102, image: oil_filter_1, fallback: PHOTOS.engineBay, category: 'engine', desc: 'Advanced multi-layer filtration to keep your engine oil clean and extend engine life.' },
-  { id: 214, name: 'Premium Oil Filter (HD)', price: 25.00, oldPrice: 32.00, brand: 'BMW', rating: 4.9, reviews: 76, image: oil_filter_2, fallback: PHOTOS.engineBay, category: 'engine', desc: 'Industrial-strength filtration designed for high-performance and heavy-duty engines.' },
-  { id: 215, name: 'High-Performance Belt', price: 48.00, oldPrice: 60.00, brand: 'Mercedes', rating: 4.7, reviews: 41, image: serpentine_belt, fallback: PHOTOS.engineBay, category: 'engine', desc: 'Durable, heat-resistant drive belt ensuring smooth operation of vital engine components.' },
-  { id: 216, name: 'Iridium Spark Plugs Set', price: 58.00, oldPrice: 75.00, brand: 'Audi', rating: 5.0, reviews: 156, image: spark_plugs, fallback: PHOTOS.engineBay, category: 'engine', desc: 'High-grade iridium spark plugs for reliable ignition and optimal fuel combustion.' },
+  { id: 401, name: 'Vulcanizing Service', price: 45.00, oldPrice: 65.00, brand: 'AutoMotive', rating: 4.9, reviews: 203, image: vulcanizing_img, fallback: PHOTOS.tyreDetail, category: 'service', desc: 'Professional tyre vulcanizing and puncture repair using high-temperature bonding techniques.', use: 'Automobile tyres are vulcanized to repair deep punctures or sidewall damage by applying heat and specialized rubber patches, ensuring structural integrity and safety on the road.' },
+  { id: 206, name: 'Auto Electrical Service', price: 320.00, oldPrice: 390.00, brand: 'AutoMotive', rating: 4.7, reviews: 88, image: electrical_img, fallback: PHOTOS.workshop, category: 'service', desc: 'Complete auto electrical diagnostics, fault finding, and wiring repairs.', use: 'This service is vital for modern vehicles to troubleshoot issues with the ECU, battery charging systems, lighting, and electronic sensors using advanced diagnostic tools like multimeters.' },
+  { id: 204, name: 'Aircondition Services', price: 645.00, oldPrice: 780.00, brand: 'AutoMotive', rating: 4.7, reviews: 61, image: aircon_img, fallback: PHOTOS.workshop, category: 'service', desc: 'Full automobile AC diagnostics, servicing, regas and repair.', use: 'Used to maintain the vehicle climate control system. Manifold gauges monitor pressure levels to ensure the correct refrigerant charge, preventing compressor failure and ensuring cabin cooling.' },
+  { id: 210, name: 'Air Conditioning Filter', price: 35.00, oldPrice: 45.00, brand: 'Toyota', rating: 4.8, reviews: 45, image: ac_filter, fallback: PHOTOS.aircon, category: 'engine', desc: 'High-efficiency cabin filter that removes dust and allergens for fresh interior air.', use: 'Installed in the HVAC housing, it filters incoming air before it reaches the cabin, protecting passengers from pollutants and keeping the evaporator core clean.' },
+  { id: 211, name: 'Heavy Duty Car Jack', price: 85.00, oldPrice: 110.00, brand: 'Ford', rating: 4.9, reviews: 32, image: car_jack, fallback: PHOTOS.workshop, category: 'suspension', desc: 'Rugged hydraulic lifting tool with safety locks for secure vehicle maintenance.', use: 'The jack is placed under the vehicle chassis at designated points to lift the car, allowing for tyre changes, brake inspections, and undercarriage repairs.' },
+  { id: 212, name: 'Engine Air Filter', price: 42.00, oldPrice: 55.00, brand: 'Honda', rating: 4.7, reviews: 88, image: engine_filter, fallback: PHOTOS.engineBay, category: 'engine', desc: 'High-flow air filter that optimizes engine intake and improves fuel efficiency.', use: 'Sits inside the air intake box to trap dirt and debris before air enters the combustion chamber, ensuring a clean air-fuel mixture and preventing engine wear.' },
+  { id: 213, name: 'Premium Oil Filter', price: 22.00, oldPrice: 28.00, brand: 'Nissan', rating: 4.8, reviews: 102, image: oil_filter_1, fallback: PHOTOS.engineBay, category: 'engine', desc: 'Advanced multi-layer filtration to keep your engine oil clean and extend engine life.', use: 'Connected to the engine block, it continuously cleans the engine oil by trapping metallic particles and sludge produced during internal combustion.' },
+  { id: 216, name: 'Iridium Spark Plugs Set', price: 58.00, oldPrice: 75.00, brand: 'Audi', rating: 5.0, reviews: 156, image: spark_plugs, fallback: PHOTOS.engineBay, category: 'engine', desc: 'High-grade iridium spark plugs for reliable ignition and optimal fuel combustion.', use: 'Screwed into the cylinder head, these plugs create an electrical spark that ignites the compressed air-fuel mixture to power the engine cycles.' },
 ]
 export const SPARES = _SPARES.map(p => ({ ...p, price: p.price * 14.5, oldPrice: p.oldPrice * 14.5 }))
 
 const _EXTRA_PRODUCTS = [
   { id: 105, name: 'ADV.1 7.1 Track 22"', price: 612.00, oldPrice: 740.00, brand: 'ADV.1', rating: 4.8, reviews: 31, image: '/wheel_product.png', fallback: PHOTOS.wheelClose, category: 'wheels' },
-  { id: 106, name: 'Work Emotion ZR10 17"', price: 195.00, oldPrice: 240.00, brand: 'Work', rating: 4.5, reviews: 156, image: '/wheel_product.png', fallback: PHOTOS.wheelClose, category: 'wheels' },
-  { id: 205, name: 'EBC Ultimax Brake Pads', price: 89.99, oldPrice: 110.00, brand: 'EBC', rating: 4.6, reviews: 344, image: '/brake_product.png', fallback: PHOTOS.brakesRed, category: 'brakes' },
-  { id: 206, name: 'Auto Electrical Diagnostic', price: 320.00, oldPrice: 390.00, brand: 'AutoMotive', rating: 4.7, reviews: 88, image: '/car_aircon.png', fallback: PHOTOS.workshop, category: 'electrical' },
   { id: 301, name: 'Formula One Tyres 205/55 R16', price: 31.32, oldPrice: 45.00, brand: 'Formula One', rating: 4.4, reviews: 512, image: '/tyre_product.png', fallback: PHOTOS.tyreDetail, category: 'tyres', featured: true },
-  { id: 302, name: 'Pirelli P Zero 245/35 R19', price: 189.00, oldPrice: 225.00, brand: 'Pirelli', rating: 4.9, reviews: 201, image: '/tyre_product.png', fallback: PHOTOS.tyreDetail, category: 'tyres' },
-  { id: 303, name: 'Michelin Pilot Sport 4', price: 165.00, oldPrice: 198.00, brand: 'Michelin', rating: 4.8, reviews: 388, image: '/tyre_product.png', fallback: PHOTOS.tyreDetail, category: 'tyres' },
-  { id: 401, name: 'AC Vulcanizing Service', price: 45.00, oldPrice: 65.00, brand: 'AutoMotive', rating: 4.9, reviews: 203, image: '/tyre_product.png', fallback: PHOTOS.tyreDetail, category: 'tyres' },
-  { id: 402, name: 'Brembo Ceramic Pads', price: 125.00, oldPrice: 150.00, brand: 'Brembo', rating: 4.8, reviews: 140, image: '/brake_product.png', fallback: PHOTOS.brakesRed, category: 'brakes' },
-  { id: 403, name: 'HRE Wheels Cleaning Kit', price: 25.00, oldPrice: 30.00, brand: 'HRE', rating: 4.5, reviews: 299, image: '/wheel_product.png', fallback: PHOTOS.wheelClose, category: 'wheels' },
-  { id: 404, name: 'Akrapovič Carbon Tip', price: 150.00, oldPrice: 180.00, brand: 'Akrapovič', rating: 5.0, reviews: 85, image: '/exhaust_product.png', fallback: PHOTOS.exhaustSmoke, category: 'exhaust' },
 ]
 
 export const ALL_PRODUCTS = [
@@ -95,7 +86,7 @@ export const ALL_PRODUCTS = [
   ..._EXTRA_PRODUCTS.map(p => ({ ...p, price: p.price * 14.5, oldPrice: p.oldPrice * 14.5 }))
 ]
 
-// Gallery — each item has a real Unsplash image URL
+// Gallery
 export const GALLERY_ITEMS = [
   { id: 1, image: PHOTOS.ferrariRed,   label: 'Ferrari Track Day',  portrait: true },
   { id: 2, image: PHOTOS.drift,        label: 'Drift Sessions' },
@@ -105,24 +96,10 @@ export const GALLERY_ITEMS = [
   { id: 6, image: PHOTOS.brakesRed,    label: 'Brembo Brakes' },
 ]
 
-// Visuals full page
-export const VISUALS_GALLERY = [
-  { id: 1,  image: n1, label: 'Exotic Dream',   category: 'Exotic Cars' },
-  { id: 2,  image: d1, label: 'Drift King',     category: 'Drift' },
-  { id: 3,  image: t1, label: 'Track Ready',    category: 'Track' },
-  { id: 4,  image: w1, label: 'Alloy Wheels',   category: 'Wheels' },
-  { id: 5,  image: s1, label: 'Street Style',   category: 'Street' },
-  { id: 6,  image: n2, label: 'Speed Demon',    category: 'Exotic Cars' },
-  { id: 7,  image: d2, label: 'Smoke Show',     category: 'Drift' },
-  { id: 8,  image: t2, label: 'Time Attack',    category: 'Track' },
-  { id: 9,  image: n3, label: 'Premium Class',  category: 'Exotic Cars' },
-  { id: 10, image: s2, label: 'City Night',     category: 'Street' },
-]
-
 export const SERVICES = [
-  { id: 1, title: 'Air-Conditioning Service', desc: 'Full automobile AC diagnostics, servicing, regas and repair. Keeping your cabin cool and comfortable all year round.', icon: 'snowflake', image: ac_filter },
-  { id: 2, title: 'Vulcanizing Service', desc: 'Professional tyre vulcanizing, puncture repair, wheel balancing and replacement. Back on the road in no time.', icon: 'wrench', image: PHOTOS.tyreDetail },
-  { id: 3, title: 'Auto Electrical Service', desc: 'Complete auto electrical diagnostics, fault finding, wiring repairs, battery service and ECU programming for all vehicle makes.', icon: 'zap', image: s2 },
+  { id: 1, title: 'Air-Conditioning Service', desc: 'Full automobile AC diagnostics, servicing, regas and repair. Keeping your cabin cool and comfortable all year round.', icon: 'snowflake', image: aircon_img },
+  { id: 2, title: 'Vulcanizing Service', desc: 'Professional tyre vulcanizing, puncture repair, wheel balancing and replacement. Back on the road in no time.', icon: 'wrench', image: vulcanizing_img },
+  { id: 3, title: 'Auto Electrical Service', desc: 'Complete auto electrical diagnostics, fault finding, wiring repairs, battery service and ECU programming for all vehicle makes.', icon: 'zap', image: electrical_img },
 ]
 
 export const FEATURED_PRODUCT = ALL_PRODUCTS.find(p => p.featured)

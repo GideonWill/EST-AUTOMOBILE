@@ -24,9 +24,9 @@
   --text-secondary:#9a9a9a;
   --text-muted:    #555555;
 
-  --radius-sm:     6px;
-  --radius-md:     12px;
-  --radius-lg:     20px;
+  --radius-sm:     0;
+  --radius-md:     0;
+  --radius-lg:     0;
 
   --transition:    0.25s cubic-bezier(0.4,0,0.2,1);
   --shadow-card:   0 4px 24px rgba(0,0,0,0.6);
@@ -113,7 +113,7 @@ input, textarea, select { font-family: inherit; }
   font-size: 14px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
@@ -141,8 +141,8 @@ input, textarea, select { font-family: inherit; }
   font-size: 14px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  border-radius: 0;
   border: 1px solid var(--border-light);
-  border-radius: var(--radius-sm);
   transition: var(--transition);
 }
 .btn-outline:hover {
@@ -160,7 +160,7 @@ input, textarea, select { font-family: inherit; }
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   border: 1px solid rgba(245,197,24,0.3);
 }
 
@@ -168,7 +168,7 @@ input, textarea, select { font-family: inherit; }
 .product-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   overflow: hidden;
   transition: var(--transition);
   position: relative;
@@ -494,13 +494,13 @@ input, textarea, select { font-family: inherit; }
 }
 .quality-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 .quality-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   padding: 32px 24px;
   transition: var(--transition);
   position: relative;
@@ -520,7 +520,7 @@ input, textarea, select { font-family: inherit; }
 .quality-icon {
   width: 52px; height: 52px;
   background: var(--accent-dim);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -644,7 +644,7 @@ input, textarea, select { font-family: inherit; }
 .part-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   overflow: hidden;
   cursor: pointer;
   transition: var(--transition);

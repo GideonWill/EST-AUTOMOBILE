@@ -1,0 +1,33 @@
+const BRANDS = ['Michelin', 'Pirelli', 'Continental', 'Bridgestone', 'Goodyear', 'Dunlop', 'Yokohama', 'Hankook'];
+const TYPES = ['All-Season Performance', 'Summer Sport', 'Winter Command', 'Ultra High Performance', 'All-Terrain Rugged'];
+
+export const TYRE_INVENTORY = [
+  { id: 1, size: '315/35/R20', cost: 700, brand: 'Michelin', type: 'Ultra High Performance', rating: '110W' },
+  { id: 2, size: '285/45/R19', cost: 600, brand: 'Pirelli', type: 'Summer Sport', rating: '107V' },
+  { id: 3, size: '175/65/R15', cost: 250, brand: 'Continental', type: 'All-Season Performance', rating: '84H' },
+  { id: 4, size: '195/65/R16', cost: 250, brand: 'Bridgestone', type: 'All-Season Performance', rating: '92V' },
+  { id: 5, size: '205/55/R16', cost: 250, brand: 'Goodyear', type: 'All-Season Performance', rating: '91V' },
+  { id: 6, size: '135/80/R12', cost: 200, brand: 'Dunlop', type: 'All-Season Performance', rating: '68T' },
+  { id: 7, size: '235/45/R20', cost: 500, brand: 'Yokohama', type: 'Summer Sport', rating: '100W' },
+  { id: 8, size: '205/50/R16', cost: 250, brand: 'Hankook', type: 'Summer Sport', rating: '87V' },
+  { id: 9, size: '215/45/R16', cost: 250, brand: 'Michelin', type: 'Summer Sport', rating: '90W' },
+  { id: 10, size: '285/70/R17', cost: 800, brand: 'BFGoodrich', type: 'All-Terrain Rugged', rating: '121R' },
+  { id: 11, size: '265/70/R17', cost: 700, brand: 'Bridgestone', type: 'All-Terrain Rugged', rating: '115S' },
+  { id: 12, size: '215/60/R17', cost: 350, brand: 'Continental', type: 'All-Season Performance', rating: '96H' },
+  { id: 13, size: '235/40/R19', cost: 600, brand: 'Pirelli', type: 'Ultra High Performance', rating: '96Y' },
+  { id: 14, size: '185/65/R16', cost: 250, brand: 'Michelin', type: 'All-Season Performance', rating: '88V' },
+  { id: 15, size: '225/40/R19', cost: 600, brand: 'Continental', type: 'Ultra High Performance', rating: '93Y' },
+  { id: 16, size: '195/45/R17', cost: 250, brand: 'Yokohama', type: 'Summer Sport', rating: '85W' },
+  { id: 17, size: '245/40/R19', cost: 600, brand: 'Goodyear', type: 'Ultra High Performance', rating: '98Y' },
+  { id: 18, size: '315/80/R16', cost: 700, brand: 'Michelin', type: 'All-Terrain Rugged', rating: '120L' },
+  { id: 19, size: '235/50/R20', cost: 500, brand: 'Bridgestone', type: 'Summer Sport', rating: '102W' },
+  { id: 20, size: '265/50/R22', cost: 1500, brand: 'Pirelli', type: 'Ultra High Performance', rating: '108Y' },
+  { id: 21, size: '285/45/R22', cost: 1200, brand: 'Continental', type: 'Ultra High Performance', rating: '114W' },
+  { id: 22, size: '275/35/R20', cost: 700, brand: 'Michelin', type: 'Summer Sport', rating: '102Y' },
+  { id: 23, size: '185/70/R14', cost: 250, brand: 'Hankook', type: 'All-Season Performance', rating: '88T' },
+  { id: 24, size: '225/55/R18', cost: 350, brand: 'Dunlop', type: 'All-Season Performance', rating: '98V' },
+  { id: 25, size: '235/55/R18', cost: 350, brand: 'Bridgestone', type: 'All-Season Performance', rating: '100V' },
+  { id: 26, size: '235/50/R18', cost: 350, brand: 'Goodyear', type: 'All-Season Performance', rating: '97V' },
+  { id: 27, size: '235/65/R18', cost: 400, brand: 'Michelin', type: 'All-Season Performance', rating: '106H' },
+  { id: 28, size: '235/55/R19', cost: 500, brand: 'Continental', type: 'All-Season Performance', rating: '101V' },
+];

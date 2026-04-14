@@ -26,8 +26,8 @@ export default function Hero() {
             <Link to="/contact" className="btn-primary" id="hero-book-btn">
               Book a Service <ArrowRight size={16} />
             </Link>
-            <Link to="/shop" className="btn-outline" id="hero-shop-btn" style={{ borderColor: 'rgba(255,255,255,0.2)', color: '#fff', background: 'rgba(255,255,255,0.05)' }}>
-              Shop Parts
+            <Link to="/inventory" className="btn-outline" id="hero-shop-btn" style={{ borderColor: 'rgba(255,255,255,0.2)', color: '#fff', background: 'rgba(255,255,255,0.05)' }}>
+              Explore Inventory
             </Link>
           </div>
         </div>

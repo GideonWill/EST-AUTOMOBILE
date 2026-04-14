@@ -28,15 +28,14 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Shop */}
+          {/* Quick Links */}
           <div className="footer-col">
-            <h4>Shop</h4>
+            <h4>Inventory</h4>
             <ul className="footer-links">
-              <li><Link to="/shop">All Parts</Link></li>
-              <li><Link to="/shop?cat=wheels">Wheels</Link></li>
-              <li><Link to="/shop?cat=tyres">Tyres</Link></li>
-              <li><Link to="/shop?cat=brakes">Brakes</Link></li>
-              <li><Link to="/shop?cat=exhaust">Exhaust</Link></li>
+              <li><Link to="/inventory">Full Stock</Link></li>
+              <li><Link to="/inventory">Tyre Selection</Link></li>
+              <li><Link to="/inventory">Rim Sizes</Link></li>
+              <li><Link to="/inventory">Pricing Info</Link></li>
             </ul>
           </div>
 
@@ -45,8 +44,6 @@ export default function Footer() {
             <h4>Company</h4>
             <ul className="footer-links">
               <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/brands">Our Brands</Link></li>
-              <li><Link to="/visuals">Visuals</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>

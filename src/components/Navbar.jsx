@@ -24,9 +24,7 @@ export default function Navbar() {
 
   const links = [
     { to: '/', label: 'Home' },
-    { to: '/shop', label: 'Shop' },
-    { to: '/brands', label: 'Brands' },
-    { to: '/visuals', label: 'Visuals' },
+    { to: '/inventory', label: 'Inventory' },
     { to: '/about', label: 'About' },
     { to: '/contact', label: 'Contact' },
   ]
@@ -62,10 +60,6 @@ export default function Navbar() {
           >
             <Search size={18} />
           </button>
-          <Link to="/cart" className="navbar-icon-btn" id="cart-btn" aria-label="Cart">
-            <ShoppingCart size={18} />
-            {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
-          </Link>
           <button
             className="hamburger"
             id="hamburger-btn"
@@ -82,7 +76,6 @@ export default function Navbar() {
         {links.map(l => (
           <NavLink key={l.to} to={l.to} end={l.to === '/'}>{l.label}</NavLink>
         ))}
-        <Link to="/cart" style={{ borderBottom: 'none' }}>Cart ({cartCount})</Link>
       </div>
 
       {/* Search overlay */}

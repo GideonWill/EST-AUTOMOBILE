@@ -1,10 +1,7 @@
 import SEO from '../components/SEO'
 import Hero from '../components/Hero'
 import Quality from '../components/Quality'
-import BrandsSection from '../components/BrandsSection'
 import ExploreParts from '../components/ExploreParts'
-import SafetyBanner from '../components/SafetyBanner'
-import VisualsSection from '../components/VisualsSection'
 import FeaturedProduct from '../components/FeaturedProduct'
 import NewsletterCTA from '../components/NewsletterCTA'
 
@@ -39,25 +36,7 @@ export default function Home() {
       </div>
 
       <Quality />
-
-      {/* Marquee ticker */}
-      <div className="marquee-wrap">
-        <div className="marquee-track">
-          {[...Array(2)].map((_, rep) =>
-            ['Premium Wheels', 'Track Performance', 'Genuine Parts', 'Fast Shipping', 'Top Brands', 'Best Prices', 'Race Grade', 'OEM Certified'].map((text, i) => (
-              <div className="marquee-item" key={`${rep}-${i}`}>
-                {text}
-                <span className="marquee-dot" />
-              </div>
-            ))
-          )}
-        </div>
-      </div>
-
-      <BrandsSection />
       <ExploreParts />
-      <SafetyBanner />
-      <VisualsSection />
       <FeaturedProduct />
       <NewsletterCTA />
     </main>
