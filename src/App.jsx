@@ -14,6 +14,7 @@ import Success from './pages/Success'
 import Profile from './pages/Profile'
 import TyreInventory from './pages/TyreInventory'
 import ItemDetail from './pages/ItemDetail'
+import Services from './pages/Services'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -39,6 +40,7 @@ function Layout() {
         <Route path="/inventory" element={<TyreInventory />} />
         <Route path="/item/:id"  element={<ItemDetail />} />
         <Route path="/about"   element={<About />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart"    element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />

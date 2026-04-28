@@ -1766,3 +1766,16 @@ input, textarea, select { font-family: inherit; }
   to   { transform: translateX(-50%); }
 }
 
+/* ══════════════════════════════════════
+   SERVICES PAGE
+══════════════════════════════════════ */
+@media (max-width: 900px) {
+  .services-sidebar {
+    display: none !important;
+  }
+}
+@media (min-width: 901px) {
+  .services-sidebar {
+    display: block !important;
+  }
+}
