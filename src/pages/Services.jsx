@@ -45,6 +45,7 @@ export default function Services() {
       <SEO 
         title="Our Services - AutoMotive" 
         description="Comprehensive automobile maintenance and repair services including diagnostics, electrical, air conditioning, and more."
+        keywords="car maintenance, auto diagnostics, car air conditioning repair, vulcanizing, auto electrical services, mechanic Accra"
       />
       
       {/* Page Hero */}

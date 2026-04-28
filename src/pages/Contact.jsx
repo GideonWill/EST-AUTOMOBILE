@@ -29,6 +29,7 @@ export default function Contact() {
       <SEO 
         title="Contact Us" 
         description="Get in touch with EST AUTOMOTIVE. Book a consultation for premium car service, parts, sales, and leasing directly on our site."
+        keywords="contact auto mechanic, book car service, ETS automotive phone number, auto repair workshop, car garage Accra"
       />
       {/* Page Hero */}
       <div className="page-hero">

@@ -99,6 +99,7 @@ export default function Shop() {
       <SEO 
         title="Shop Automobile Parts" 
         description={`Browse our extensive catalogue of ${ALL_PRODUCTS.length} premium automobile parts across various categories. Find exactly what you need.`} 
+        keywords="buy auto parts online, car accessories, genuine vehicle parts, car wheels, automobile spares, racing parts"
       />
       {/* Page Hero */}
       <div className="page-hero">

@@ -9,6 +9,7 @@ export default function Home() {
       <SEO 
         title="Premium Automobile Parts & Accessories"
         description="Buy, sell, and learn about the best automotive brands. Get race-grade genuine parts with fast shipping."
+        keywords="premium auto parts, mobile auto mechanic Accra, genuine car parts, auto repair services, ETS automotive"
       />
       <Hero />
 

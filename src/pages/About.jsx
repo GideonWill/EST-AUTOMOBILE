@@ -17,6 +17,7 @@ export default function About() {
       <SEO 
         title="About AutoMotive" 
         description="Learn more about EST AUTOMOTIVE's mission, our premium automotive engineering background, and our commitment to racing-grade parts."
+        keywords="about ETS automotive, car experts Ghana, trusted mechanics, automotive history, car repair Accra"
       />
       {/* Page Hero */}
       <div className="page-hero">
