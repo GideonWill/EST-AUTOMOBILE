@@ -3,8 +3,6 @@ import Hero from '../components/Hero'
 import Quality from '../components/Quality'
 import ExploreParts from '../components/ExploreParts'
 import FeaturedProduct from '../components/FeaturedProduct'
-import NewsletterCTA from '../components/NewsletterCTA'
-
 export default function Home() {
   return (
     <main>
@@ -38,7 +36,6 @@ export default function Home() {
       <Quality />
       <ExploreParts />
       <FeaturedProduct />
-      <NewsletterCTA />
     </main>
   )
 }
